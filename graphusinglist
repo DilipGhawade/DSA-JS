@@ -1,0 +1,27 @@
+const graph = {};
+
+function addEdge(v1, v2) {
+  if (!graph[v1]) graph[v1] = [];
+
+  if (!graph[v2]) graph[v2] = [];
+
+  graph[v1].push(v2);
+
+  graph[v2].push(v1);
+}
+
+addEdge("A", "B");
+
+addEdge("A", "C");
+
+addEdge("B", "D");
+
+addEdge("C", "D");
+
+addEdge("D", "E");
+
+console.log("Graph (Adjacency List):");
+
+for (let node in graph) {
+  console.log(node, "+", graph[node].join(", "));
+}
